@@ -1,8 +1,9 @@
-const express = require('express')
+const express = require('express');
+const dbConnect = require('./config/dbConnect');
 const app = express()
 const dotenv = require('dotenv').config()
-const PORT = process.env.PORT || 3001;
-
+const PORT = process.env.PORT || 4001;
+dbConnect();
 app.use("/", (req, res) =>{
     res.send("Hello from server side ");
 })
